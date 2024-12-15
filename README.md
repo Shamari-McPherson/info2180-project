@@ -6,7 +6,7 @@
 
 - From the database, enter the following sql commands
 
-``` CREATE USER 'proj2_user'@'localhost' IDENTIFIED BY 'groupbest1234'; GRANT ALL ON dolphin_crm.* TO 'proj2_user'@'localhost'; ```
+``` CREATE USER 'user'@'localhost' IDENTIFIED BY 'password123'; GRANT ALL ON dolphin_crm.* TO 'user'@'localhost'; ```
 
 - Navigate to login.html in the pages folder
 

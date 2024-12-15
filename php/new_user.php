@@ -25,6 +25,19 @@ if ($conn->connect_error) {
     die("Failed to connect: " . $conn->connect_error);
 }
 
+// Only roles allowed Admin or Member
+if (preg_match('/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$/', $password)) {
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+} else {
+    die("Password does not meet these requirements: password must have atleast one number, one letter, one capital letter and must be atleast 8 characters long.");
+}
+
+// Only roles allowed Admin or Member
+if ($role_filter !== 'Admin' && $role_filter !== 'Member') {
+    die("Invalid role selected.");
+}
+
+
 $sql = "INSERT INTO Users (firstname, lastname, email, pwd, _role) VALUES (?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
 
