@@ -15,7 +15,7 @@ if ($conn->connect_error) {
     die("Failed to connect: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, firstname, lastname FROM Users";
+$sql = "SELECT id,firstname,lastname FROM Users";
 $result = $conn->query($sql);
 $rows = $result->fetchAll(PDO::FETCH_ASSOC);
 
